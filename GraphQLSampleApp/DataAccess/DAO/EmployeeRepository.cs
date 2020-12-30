@@ -23,7 +23,10 @@ namespace GraphQLSampleApp.DataAccess.DAO
 
         public Employee GetEmployeeById(int id)
         {
-            var employee = _sampleAppDbContext.Employee.Find(id);
+            var employee = _sampleAppDbContext.Employee
+                .Include(e => e.Department)
+                .Where(e => e.EmployeeId == id)
+                .FirstOrDefault();
 
             if (employee != null)
                 return employee;

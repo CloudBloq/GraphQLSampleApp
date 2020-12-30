@@ -14,5 +14,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Script\" />
+  </ItemGroup>
+
 
 </Project>
